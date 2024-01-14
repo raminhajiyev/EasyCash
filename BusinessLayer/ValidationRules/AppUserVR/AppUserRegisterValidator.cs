@@ -22,7 +22,7 @@ namespace BusinessLayer.ValidationRules.AppUserVR
                 RuleFor(x=>x.Email).EmailAddress().WithMessage("Please use a valid email address!");  
                 RuleFor(x=>x.Password).NotEmpty().WithMessage("Password can not be empty!");  
                 RuleFor(x=>x.ConfirmPassword).NotEmpty().WithMessage("Confirm password can not be empty!");  
-                RuleFor(x=>x.ConfirmPassword).Equal(y=>y.Password).WithMessage("Passwords are not matching!");  
+                RuleFor(x=>x.Password).Equal(y=>y.ConfirmPassword).WithMessage("Passwords are not matching!");  
         }
     }
 }
